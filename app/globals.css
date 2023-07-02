@@ -1,27 +1,78 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+@import url(https://fonts.googleapis.com/css2?family=Gloock&display=swap);
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: black;
+  font-family: "Helvetica Neue";
+  scroll-behavior: smooth;
+  @apply text-[16px] md:text-[20px];
+}
+
+h1 {
+  @apply p-0;
+}
+
+.title {
+  @apply font-medium uppercase text-[5.5rem] lg:text-[8vw] lg:leading-[7.5rem];
+}
+
+.h2-serif {
+  @apply text-[40px] leading-[40px] md:text-[70px] md:leading-[70px];
+  font-family: "Gloock";
+}
+
+.h1-sans {
+  @apply text-[30px] leading-[30px] md:text-[5.5vw] md:leading-[5.5vw];
+}
+
+.project-header {
+  @apply text-[30px] leading-[30px] md:text-[40px] md:leading-[50px];
+}
+
+.h2-sans {
+  @apply text-[30px] leading-[30px] md:text-[40px] md:leading-[50px];
+}
+
+.h1-serif {
+  font-family: "Gloock";
+  @apply font-normal text-[60px] md:text-[5.5vw];
+}
+
+.p-sans {
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+.p-lowercase {
+  @apply text-[16px] md:text-[20px];
+  line-height: 25px;
+  text-align: left;
+}
+
+.footer-title {
+  @apply text-white;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.footer-link {
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.header-link {
+  @apply text-black mix-blend-difference;
+}
+
+input,
+textarea {
+  @apply border-b-2 border-black bg-white pb-3 md:pb-6 outline-none placeholder:text-gray placeholder:uppercase;
+}
+
+button {
+  @apply uppercase leading-tight text-black font-medium text-[90px] bg-none border-b-8 border-black;
 }
