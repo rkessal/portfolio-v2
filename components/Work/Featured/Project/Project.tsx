@@ -12,6 +12,7 @@ export default function Project({ project, setModal, isLast }: Props) {
   return (
     <Link
       href={project.link || "#"}
+      scroll={false}
       onMouseEnter={() => setModal({ active: true, index: project.id })}
       onMouseLeave={() => setModal({ active: false, index: project.id })}
     >

@@ -9,7 +9,7 @@ export default function GoBack({ section }: Props) {
   return (
     <ul className="z-10">
       <li>
-        <Link href={`/#${section}`} className="cursor-pointer">
+        <Link href={`/#${section}`} scroll={true} className="cursor-pointer">
           GO BACK
         </Link>
       </li>
