@@ -187,7 +187,7 @@ export default function Oms({}: Props) {
                 src="/projects/oms/images/oms-1.png"
                 width={2402}
                 height={4942}
-                alt=""
+                alt="demo 1"
               />
             </div>
           </div>
@@ -206,7 +206,7 @@ export default function Oms({}: Props) {
                 src="/projects/oms/images/oms-3.png"
                 width={2402}
                 height={4018}
-                alt=""
+                alt="demo 2"
               />
             </div>
           </div>
