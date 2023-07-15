@@ -9,7 +9,7 @@ type Props = {
 const title: Variants = {
   initial: {
     // clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
-    y: 120,
+    y: "100%",
   },
   animate: {
     y: 0,

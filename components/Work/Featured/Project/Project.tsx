@@ -10,19 +10,19 @@ type Props = {
 };
 
 export default function Project({ project, setModal, isLast, canMove }: Props) {
-  const handleClick = () => {
-    canMove(false);
-    window.localStorage.setItem("scroll", String(window.scrollY));
+  const handleClick = (link: string | undefined) => {
+    if (link) {
+      canMove(false);
+      window.localStorage.setItem("scroll", String(window.scrollY));
+    }
   };
   return (
     <Link
-      href={{
-        pathname: project.link || "#",
-      }}
+      href={project.link || "#"}
       scroll={false}
       onMouseEnter={() => setModal({ active: true, index: project.id })}
       onMouseLeave={() => setModal({ active: false, index: project.id })}
-      onClick={() => handleClick()}
+      onClick={() => handleClick(project.link)}
     >
       <div
         className={`py-16 flex flex-row items-center group  ${
