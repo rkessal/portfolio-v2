@@ -15,7 +15,7 @@ h1 {
 }
 
 .title {
-  @apply font-medium uppercase text-[5.5rem] lg:text-[8vw] lg:leading-[1];
+  @apply font-medium uppercase text-6xl lg:text-[8vw] lg:leading-[1];
 }
 
 .h2-serif {
@@ -74,5 +74,5 @@ textarea {
 }
 
 button {
-  @apply uppercase leading-tight text-black font-medium text-[90px] bg-none border-b-8 border-black;
+  @apply uppercase leading-tight text-black font-medium text-6xl bg-none border-b-8 border-black lg:text-[8vw];
 }
