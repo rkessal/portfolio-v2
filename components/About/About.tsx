@@ -1,4 +1,3 @@
-"use client";
 import {
   MotionValue,
   motion,
@@ -6,11 +5,13 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { useTranslation } from "next-i18next";
 
 type Props = {};
 
 function About({}: Props) {
+  const { t } = useTranslation();
   const container = useRef<HTMLDivElement>(null);
 
   // bad performance
@@ -32,26 +33,30 @@ function About({}: Props) {
     }, ${val})`;
   });
 
+  useEffect(() => {
+    return () => {
+      rgb.clearListeners();
+    };
+  }, []);
+
   return (
     <motion.div
       ref={container}
-      className="bg-white px-8 py-96 uppercase flex justify-center"
+      className="flex justify-center px-8 py-64 uppercase bg-white lg:py-96"
     >
-      <div className="max-w-2xl h2-sans text-black">
-        <Paragraph>I've started graphic design when I was 13.</Paragraph>
-        <Paragraph>Thought it was some cool shit.</Paragraph>
-        <Paragraph>I still do.</Paragraph>
-        <Paragraph>I studied software engineering</Paragraph>
-        <Paragraph>I can now bring life to my ideas.</Paragraph>
-        <Paragraph>I can now bring life to your ideas.</Paragraph>
-        <Paragraph>
-          I think that design isn't just pixels and frame animations.
-        </Paragraph>
-        <Paragraph>It's more of a story, a message.</Paragraph>
-        <Paragraph>Do you have a story to tell?</Paragraph>
-        <Paragraph>Tell me about it.</Paragraph>
-        <Paragraph>I'll do the rest.</Paragraph>
-        <Paragraph>With pixels and frame animations.</Paragraph>
+      <div className="max-w-2xl text-black uppercase h2-sans">
+        <Paragraph>{t("ABOUT.COPY1")}.</Paragraph>
+        <Paragraph>{t("ABOUT.COPY2")}.</Paragraph>
+        <Paragraph>{t("ABOUT.COPY3")}.</Paragraph>
+        <Paragraph>{t("ABOUT.COPY4")}.</Paragraph>
+        <Paragraph>{t("ABOUT.COPY5")}.</Paragraph>
+        <Paragraph>{t("ABOUT.COPY6")}.</Paragraph>
+        <Paragraph>{t("ABOUT.COPY7")}.</Paragraph>
+        <Paragraph>{t("ABOUT.COPY8")}.</Paragraph>
+        {/* <Paragraph>{t("ABOUT.COPY9")}?</Paragraph> */}
+        {/* <Paragraph>{t("ABOUT.COPY10")}.</Paragraph>
+        <Paragraph>{t("ABOUT.COPY11")}.</Paragraph>
+        <Paragraph>{t("ABOUT.COPY12")}.</Paragraph> */}
       </div>
     </motion.div>
   );
@@ -61,7 +66,7 @@ function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [0, distance]);
 }
 
-function smoothSpring(value: MotionValue<number>) {
+function useSmoothSpring(value: MotionValue<number>) {
   return useSpring(value, {
     stiffness: 100,
     damping: 30,
@@ -69,7 +74,7 @@ function smoothSpring(value: MotionValue<number>) {
   });
 }
 
-function Paragraph({ children }: { children: string }) {
+const Paragraph = ({ children }: { children: string | string[] }) => {
   const container = useRef(null);
   const { scrollYProgress: scrollYPosition } = useScroll({
     target: container,
@@ -79,8 +84,15 @@ function Paragraph({ children }: { children: string }) {
     target: container,
     offset: ["start 40%", "start end"],
   });
-  const y = smoothSpring(useParallax(scrollYPosition, 600));
-  const opacity = smoothSpring(useTransform(scrollOpacity, [0, 1], [1, 0]));
+  const y = useSmoothSpring(useParallax(scrollYPosition, 600));
+  const opacity = useTransform(scrollOpacity, [0, 1], [1, 0]);
+
+  useEffect(() => {
+    return () => {
+      y.clearListeners();
+      opacity.clearListeners();
+    };
+  }, []);
 
   return (
     <div
@@ -92,6 +104,6 @@ function Paragraph({ children }: { children: string }) {
       </motion.p>
     </div>
   );
-}
+};
 
 export default About;

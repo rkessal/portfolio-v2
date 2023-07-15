@@ -1,10 +1,17 @@
 "use client";
-import React from "react";
+import React, { FormEvent, useState } from "react";
 import Markee from "../Work/Markee/Markee";
 import SectionTitle from "../shared/SectionTitle/SectionTitle";
 import { Variants, motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
+import sendMessage, { Payload } from "@/pages/api/contact/service";
 
 type Props = {};
+
+type Status = {
+  success: undefined | boolean;
+  message: string;
+};
 
 const rightSideContainer: Variants = {
   initial: {
@@ -13,8 +20,8 @@ const rightSideContainer: Variants = {
   animate: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.4,
-      delayChildren: 1.9,
+      staggerChildren: 0.2,
+      delayChildren: 0.9,
     },
   },
 };
@@ -22,7 +29,7 @@ const rightSideContainer: Variants = {
 const rightSide: Variants = {
   initial: {
     opacity: 0,
-    y: 20,
+    y: "100%",
   },
   animate: {
     opacity: 1,
@@ -62,15 +69,59 @@ const image: Variants = {
 };
 
 export default function Contact({}: Props) {
+  const { t } = useTranslation();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Status>({
+    success: true,
+    message: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const setSuccess = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+    setStatus({
+      success: true,
+      message: t("CONTACT.SUCCESS"),
+    });
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsLoading(true);
+
+    let payload: Payload = {
+      name,
+      email,
+      message,
+    };
+
+    const response = await sendMessage(payload);
+
+    if (!response.error) {
+      setSuccess();
+    } else {
+      setStatus({
+        success: false,
+        message: t("CONTACT.ERROR"),
+      });
+    }
+
+    setIsLoading(false);
+  };
+
   return (
-    <section id="contact" className="bg-white text-black">
+    <section id="contact" className="text-black bg-white">
       <Markee baseVelocity={-5}>contact</Markee>
       <Markee baseVelocity={5}>contact</Markee>
       <div className="px-8 pt-36 ">
         <SectionTitle>Contact</SectionTitle>
-        <div className="flex flex-col gap-16 md:gap-8 md:flex-row py-16">
+        <div className="flex flex-col gap-16 py-16 md:gap-8 md:flex-row">
           <motion.div
-            className="md:w-[40%]"
+            className="hidden 2xl:block md:w-[45%]"
             variants={imageContainer}
             initial="initial"
             whileInView="animate"
@@ -82,7 +133,7 @@ export default function Contact({}: Props) {
               whileInView="animate"
               viewport={{ once: true }}
               src="paris.png"
-              className="z-10 w-full object-cover"
+              className="z-10 object-cover w-full"
             />
           </motion.div>
           <motion.div
@@ -92,21 +143,62 @@ export default function Contact({}: Props) {
             viewport={{ once: true }}
             className="flex flex-col flex-1 gap-10 md:gap-20"
           >
-            <motion.div variants={rightSide} className="indent-24 h1-sans">
-              think <span className="h1-serif">we</span>'re, <br /> a{" "}
-              <span className="h1-serif">good fit</span>? <br />
-              let's work <span className="h1-serif">together</span>
-            </motion.div>
-            <motion.input variants={rightSide} placeholder="YOUR NAME" />
-            <motion.input variants={rightSide} placeholder="YOUR EMAIL" />
-            <motion.textarea
+            <motion.div
               variants={rightSide}
-              placeholder="YOUR AWESOME PROJECT IDEA"
-              rows={7}
-            />
-            <motion.div variants={rightSide} className="w-fit md:mt-8">
-              <button>send it</button>
+              className="hidden 2xl:block indent-24 h1-sans"
+            >
+              {t("CONTACT.THINK")}{" "}
+              <span className="h1-serif">{t("CONTACT.WE")}</span>
+              {t("CONTACT.WEARE")}{" "}
+              {t("CONTACT.WEARE").toString().includes("re") ? <br /> : ""}
+              {t("CONTACT.A")}
+              <span className="h1-serif">{t("CONTACT.GOODFIT")}</span>? <br />
+              {t("CONTACT.LETSWORK")}{" "}
+              <span className="h1-serif">{t("CONTACT.TOGETHER")}</span>
             </motion.div>
+            <form
+              className="flex flex-col flex-1 gap-10 md:gap-20"
+              onSubmit={(e) => handleSubmit(e)}
+            >
+              <motion.input
+                type="text"
+                name="name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                variants={rightSide}
+                placeholder={t("CONTACT.YOURNAME")}
+              />
+              <motion.input
+                type="text"
+                name="email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+                variants={rightSide}
+                placeholder={t("CONTACT.YOUREMAIL")}
+                value={email}
+              />
+              <motion.textarea
+                name="message"
+                required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                variants={rightSide}
+                placeholder={t("CONTACT.YOURIDEA")}
+                rows={5}
+              />
+              <motion.div variants={rightSide} className="w-fit md:mt-8">
+                <button type="submit">
+                  {isLoading ? t("CONTACT.SENDING") : t("CONTACT.SEND")}
+                </button>
+
+                {status && (
+                  <div className={`${!status.success && "text-red-500"} `}>
+                    {status.message}
+                  </div>
+                )}
+              </motion.div>
+            </form>
           </motion.div>
         </div>
       </div>

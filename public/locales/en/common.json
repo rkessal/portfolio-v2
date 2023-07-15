@@ -1,0 +1,88 @@
+{
+  "META": {
+    "DESCRIPTION": "Errka is a frontend developer based in Paris. "
+  },
+  "SHARED": {
+    "BACK": "go back",
+    "WEBSITE": "website",
+    "VISIT": "visit"
+  },
+  "HEADER": {
+    "ABOUT": "About",
+    "WORK": "Work",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "RIGHTS": "All rights reserved",
+    "IAM": "I'm",
+    "BASEDIN": "Based in"
+  },
+  "ABOUT": {
+    "COPY1": "i've started graphic design when i was 13",
+    "COPY2": "thought it was cool",
+    "COPY3": "i still do",
+    "COPY4": "i studied software engineering",
+    "COPY5": "i can now bring life to my ideas",
+    "COPY6": "i can now bring life to your ideas",
+    "COPY7": "i think that design isn't just pixels and frame animations",
+    "COPY8": "it's more of a story, a message",
+    "COPY9": "do you have a story to tell",
+    "COPY10": "tell me about it",
+    "COPY11": "i'll do the rest",
+    "COPY12": "with pixels and frame animations"
+  },
+  "WORK": {
+    "WORK": "WORK"
+  },
+  "CONTACT": {
+    "THINK": "think",
+    "WE": "we",
+    "WEARE": "'re",
+    "A": "a ",
+    "GOODFIT": "good fit",
+    "LETSWORK": "let's work",
+    "TOGETHER": "together",
+    "YOURNAME": "YOUR NAME",
+    "YOUREMAIL": "YOUR EMAIL",
+    "YOURIDEA": "YOUR AWESOME PROJET IDEA",
+    "SEND": "SEND IT",
+    "SENDING": "SENDING",
+    "ERROR": "Something went wrong, try again later.",
+    "SUCCESS": "Your message has been sent. "
+  },
+  "FOOTER": {
+    "PP": "privacy policy",
+    "TOP": "back to top",
+    "RIGHTS": "all rights reserved"
+  },
+  "OMS": {
+    "META": {
+      "DESCRIPTION": "Organisation mondiale de la solidarité is an association located in Besançon, in the eastern part of France, whose purpose is to collect donations and assist people in need."
+    },
+    "INTRO": "Organisation mondiale de la solidarité is an association located in Besançon, in the eastern part of France, whose purpose is to collect donations and assist people in need.",
+    "COPY1": "The website is user-friendly. I chose basic colors, black and white, with a Serif font for the headings and a Sans Serif font for the content.",
+    "COPY2": "The website is also responsive, which means it adapts to display on different devices such as computers, tablets, and mobile phones.",
+    "COPY3": "The donation feature was the most important aspect of the website.",
+    "COPY4": "That's why I created a dedicated page for this functionality. It enables visitors to make donations easily and securely.",
+    "COPY5": "A prominent \"Donate\" button has been placed in the footer, incorporating the primary color of the association's logo."
+  },
+  "PRIVACY": {
+    "TITLE": "privacy policy",
+    "COLLECTION_PERSONAL_INFORMATION": {
+      "TITLE": "Collection of Personal Information",
+      "CONTENT": "When you use my contact form, I may collect your name, email address, and message. This information is used solely to respond to your inquiry and will not be shared with third parties without your prior consent."
+    },
+    "USE_PERSONAL_INFORMATION": {
+      "TITLE": "Use of Personal Information",
+      "CONTENT": "I only use the information you provide me for the purpose of addressing your specific requests. I will not use it to send unsolicited information or share it with third parties without your prior consent."
+    },
+    "COOKIES": {
+      "TITLE": "Cookies",
+      "CONTENT": "I do not use cookies or other tracking technologies to collect personal information about visitors to my website."
+    },
+    "CONTACT": {
+      "TITLE": "Contact",
+      "CONTENT": "If you have any questions or concerns about my privacy policy, please contact me at the following email address: hello@errka.dev."
+    }
+  }
+}

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Project from "./Project/Project";
 import Modal from "./Modal/Modal";
 
@@ -24,6 +24,12 @@ export default function Featured({ projects }: Props) {
   };
 
   const [modal, setModal] = useState({ active: false, index: 0 });
+  const [canMove, setCanMove] = useState(true);
+  const [isMobile, setIsMobile] = useState<boolean>();
+
+  useEffect(() => {
+    setIsMobile(() => window.innerWidth <= 768);
+  }, [canMove]);
 
   return (
     <>
@@ -32,10 +38,13 @@ export default function Featured({ projects }: Props) {
           key={project.id}
           project={project}
           setModal={setModal}
+          canMove={setCanMove}
           isLast={isLast(projects, project)}
         />
       ))}
-      <Modal modal={modal} projects={projects} />
+      {!isMobile && (
+        <Modal modal={modal} canMove={canMove} projects={projects} />
+      )}
     </>
   );
 }

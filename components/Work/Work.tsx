@@ -1,9 +1,10 @@
 "use client";
+import { Variants, easeIn, easeInOut, easeOut, motion } from "framer-motion";
 import React from "react";
+import SectionTitle from "../shared/SectionTitle/SectionTitle";
 import Featured, { Project } from "./Featured/Featured";
 import Markee from "./Markee/Markee";
-import { Variants, motion } from "framer-motion";
-import SectionTitle from "../shared/SectionTitle/SectionTitle";
+import { UseTranslation, useTranslation } from "next-i18next";
 
 type Props = {};
 
@@ -29,29 +30,29 @@ const projects: Project[] = [
     id: 2,
     name: "Nessnotes",
     category: "Mobile App ",
-    image: "paris.png",
+    image: "ness-notes.png",
     show: false,
     stack: "React Native",
   },
-  {
-    id: 3,
-    name: "Team.",
-    category: "Web design",
-    image: "me.jpg",
-    show: false,
-    stack: "Figma",
-  },
+  // {
+  //   id: 3,
+  //   name: "Team.",
+  //   category: "Web design",
+  //   image: "me.jpg",
+  //   show: false,
+  //   stack: "Figma",
+  // },
 ];
-
 export default function Work({}: Props) {
+  const { t } = useTranslation();
   return (
-    <section id="work" className="bg-white text-black uppercase ">
-      <Markee baseVelocity={5}>work</Markee>
-      <Markee baseVelocity={-5}>work</Markee>
+    <motion.section id="work" className="bg-white text-black uppercase ">
+      <Markee baseVelocity={5}>{t("WORK.WORK")}</Markee>
+      <Markee baseVelocity={-5}>{t("WORK.WORK")}</Markee>
       <div className="px-8 py-36">
-        <SectionTitle>Work</SectionTitle>
+        <SectionTitle>{t("WORK.WORK")}</SectionTitle>
         <Featured projects={projects} />
       </div>
-    </section>
+    </motion.section>
   );
 }

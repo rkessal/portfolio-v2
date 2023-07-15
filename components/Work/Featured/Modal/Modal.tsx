@@ -8,10 +8,16 @@ import { gsap } from "gsap";
 type Props = {
   modal: { active: boolean; index: number };
   projects: Project[];
+  canMove: boolean;
 };
 
 const scaleAnimation: Variants = {
-  initial: { scale: 0, x: "-50%", y: "-50%" },
+  initial: {
+    scale: 0,
+    x: "-50%",
+    y: "-50%",
+    clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+  },
   open: {
     scale: 1,
     x: "-50%",
@@ -25,14 +31,17 @@ const scaleAnimation: Variants = {
     transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
   },
   exit: {
-    width: "100vh",
+    scale: 1,
+    clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
     transition: {
-      duration: 1,
+      delay: 0.4,
+      duration: 0.6,
+      ease: [0.76, 0, 0.14, 1],
     },
   },
 };
 
-export default function Modal({ modal, projects }: Props) {
+export default function Modal({ modal, projects, canMove }: Props) {
   const { active, index } = modal;
   const modalContainer = useRef(null);
   const label = useRef(null);
@@ -55,26 +64,28 @@ export default function Modal({ modal, projects }: Props) {
       ease: "power3",
     });
     const handleMouseMove = (e: MouseEvent) => {
+      if (!canMove) return;
       const { pageX, pageY } = e;
       moveModalContainerX(pageX);
       moveModalContainerY(pageY);
       moveLabelX(pageX);
       moveLabelY(pageY);
     };
+
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [canMove]);
   return (
     <>
       <motion.div
         ref={modalContainer}
         variants={scaleAnimation}
         initial="initial"
-        exit="exit"
         animate={active ? "open" : "closed"}
+        exit={active ? "exit" : ""}
         className="h-[300px] w-[400px] flex items-center justify-center absolute overflow-hidden pointer-events-none "
       >
         <div
@@ -86,7 +97,7 @@ export default function Modal({ modal, projects }: Props) {
             return (
               <div
                 key={id}
-                className="relative h-full w-full flex items-center justify-center bg-black"
+                className="relative flex items-center justify-center w-full h-full bg-black"
               >
                 <Image
                   src={`/projects/images/${image}`}
@@ -102,12 +113,13 @@ export default function Modal({ modal, projects }: Props) {
       </motion.div>
       <motion.div
         ref={label}
-        className="flex items-center justify-center absolute pointer-events-none"
+        className="absolute z-50 flex items-center justify-center pointer-events-none"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "open" : "closed"}
+        exit={active ? "closed" : ""}
       >
-        <div className="flex items-center justify-center bg-white rounded-full w-24 h-24 opacity-90">
+        <div className="flex items-center justify-center w-24 h-24 bg-white rounded-full opacity-90">
           <span className="text-black ">
             {projects.find((project) => index === project.id)?.show
               ? "view"

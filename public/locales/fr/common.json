@@ -1,0 +1,89 @@
+{
+  "META": {
+    "DESCRIPTION": "Errka est un frontend developer basé à Paris. "
+  },
+  "SHARED": {
+    "BACK": "retour",
+    "WEBSITE": "le site web",
+    "VISIT": "visiter"
+  },
+  "HEADER": {
+    "ABOUT": "A propos",
+    "WORK": "Projets",
+    "CONTACT": "Contact"
+  },
+
+  "HERO": {
+    "RIGHTS": "Tous droits réservés",
+    "IAM": "Je suis",
+    "BASEDIN": "Basé à"
+  },
+  "ABOUT": {
+    "COPY1": "Je me suis lancé dans le graphisme quand j'avais 13 ans",
+    "COPY2": "Je trouvais ça cool",
+    "COPY3": "C'est toujours le cas",
+    "COPY4": "J'ai étudié le développement web",
+    "COPY5": "Je peux maintenant donner vie à mes idées",
+    "COPY6": "Je peux maintenant donner vie à tes idées",
+    "COPY7": "Je pense que le design n'est pas seulement des pixels et des animations",
+    "COPY8": "C'est comme une histoire, un message",
+    "COPY9": "Tu as une histoire à raconter",
+    "COPY10": "Dis-moi tout",
+    "COPY11": "Je m'occuperai du reste",
+    "COPY12": "Avec des pixels et des animations"
+  },
+  "WORK": {
+    "WORK": "PROJETS"
+  },
+  "CONTACT": {
+    "THINK": "tu penses",
+    "WE": "que je ",
+    "WEARE": "peux",
+    "A": "t'",
+    "GOODFIT": "aider ",
+    "LETSWORK": "",
+    "TOGETHER": "contacte-moi",
+    "YOURNAME": "TON NOM",
+    "YOUREMAIL": "TON EMAIL",
+    "YOURIDEA": "TON SUPER PROJET",
+    "SEND": "ENVOYER",
+    "SENDING": "EN COURS",
+    "ERROR": "Une erreur s'est produite, veuillez réessayer plus tard.",
+    "SUCCESS": "Votre message a bien été envoyé. "
+  },
+  "FOOTER": {
+    "PP": "confidentialité",
+    "TOP": "retour en haut",
+    "RIGHTS": "tous droits réservés"
+  },
+  "OMS": {
+    "META": {
+      "DESCRIPTION": "L'organisation mondiale de la solidarité est une association située à Besançon dans l'Est de la France et qui a pour but de récolter des dons et aider les personnes dans le besoin."
+    },
+    "INTRO": "L'organisation mondiale de la solidarité est une association située à Besançon dans l'Est de la France et qui a pour but de récolter des dons et aider les personnes dans le besoin.",
+    "COPY1": "Le site web a été conçu pour être simple et facile à utiliser. Les couleurs basiques, noir et blanc, ainsi que les polices Serif et sans Serif, assurent une lecture facile et agréable.",
+    "COPY2": "Le site est également responsive, c'est-à-dire qu'il s'adapte à l'affichage sur différents dispositifs tels que les ordinateurs, les tablettes et les téléphones mobiles.",
+    "COPY3": "La fonctionnalité de don était la plus importante du site.",
+    "COPY4": "C'est pourquoi j'ai créé une page dédiée à cette fonctionnalité. Elle permet aux visiteurs de faire un don facilement et en toute sécurité.",
+    "COPY5": "Un bouton \"Faire un don\" a été placé en évidence dans le pied de page, reprenant la couleur principale du logo de l'association."
+  },
+  "PRIVACY": {
+    "TITLE": "Politique de confidentialité",
+    "COLLECTION_PERSONAL_INFORMATION": {
+      "TITLE": "Collecte d'informations personnelles",
+      "CONTENT": "Lorsque vous utilisez mon formulaire de contact, je peux recueillir votre nom, votre adresse e-mail et votre message. Ces informations sont utilisées uniquement pour répondre à votre demande et ne seront pas partagées avec des tiers sans votre consentement préalable."
+    },
+    "USE_PERSONAL_INFORMATION": {
+      "TITLE": "Utilisation des informations personnelles",
+      "CONTENT": "Je n'utilise les informations que vous me fournissez que dans le but de répondre à vos demandes spécifiques. Je ne les utiliserai pas pour vous envoyer des informations non sollicitées ni ne les partagerai avec des tiers sans votre consentement préalable."
+    },
+    "COOKIES": {
+      "TITLE": "Cookies",
+      "CONTENT": "Je n'utilise pas de cookies ou d'autres technologies de suivi pour collecter des informations personnelles sur les visiteurs de mon site web."
+    },
+    "CONTACT": {
+      "TITLE": "Contact",
+      "CONTENT": "Si vous avez des questions ou des préoccupations concernant ma politique de confidentialité, veuillez me contacter à l'adresse e-mail suivante : hello@errka.dev."
+    }
+  }
+}
