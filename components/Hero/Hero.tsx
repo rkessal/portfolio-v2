@@ -80,7 +80,7 @@ export default function Hero({}: Props) {
     <header id="me">
       <div className="flex flex-col h-[60vh] lg:h-[70vh] px-8 pt-40 relative">
         <img src="errka.svg" alt="" />
-        <div className="mt-10 lg:mt-0 lg:absolute lg:bottom-8 overflow-hidden">
+        <div className="mt-10 overflow-hidden lg:mt-0 lg:absolute lg:bottom-8">
           <motion.p
             className="uppercase"
             variants={bottomTop}
@@ -95,16 +95,16 @@ export default function Hero({}: Props) {
           initial="initial"
           animate="open"
           exit="exit"
-          className="bg-white absolute top-0 left-0 right-0 h-full"
+          className="absolute top-0 left-0 right-0 h-full bg-white"
         ></motion.div>
       </div>
-      <div className="flex flex-col lg:flex-row w-full bg-white px-8">
+      <div className="flex flex-col w-full px-8 bg-white lg:flex-row">
         <motion.div
           variants={about}
           initial="initial"
           animate="animate"
           exit="exit"
-          className="flex order-2 lg:order-1 flex-col justify-between flex-1 pt-8 pr-4 text-black h1-sans "
+          className="flex flex-col justify-between flex-1 order-2 pt-8 pr-4 text-black lg:order-1 h1-sans "
         >
           <div>
             <p className="mb-20 lg:mb-0">
@@ -133,7 +133,7 @@ export default function Hero({}: Props) {
             viewport={{ amount: 0.6, once: true }}
             src="me.jpg"
             alt="Rayhan"
-            className=" z-10"
+            className="z-10 "
           />
         </motion.div>
       </div>

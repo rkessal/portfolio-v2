@@ -5,7 +5,7 @@
 
 body {
   background: black;
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue", Arial;
   scroll-behavior: smooth;
   @apply text-[16px] md:text-[20px];
 }
@@ -70,7 +70,7 @@ h1 {
 
 input,
 textarea {
-  @apply border-b-2 border-black bg-white pb-3 md:pb-6 outline-none placeholder:text-gray placeholder:uppercase;
+  @apply pb-3 bg-white border-b-2 border-black outline-none md:pb-6 placeholder:text-gray placeholder:uppercase;
 }
 
 button {
