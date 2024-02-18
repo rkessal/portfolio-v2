@@ -66,6 +66,14 @@
     "COPY4": "That's why I created a dedicated page for this functionality. It enables visitors to make donations easily and securely.",
     "COPY5": "A prominent \"Donate\" button has been placed in the footer, incorporating the primary color of the association's logo."
   },
+  "ATK": {
+    "META": {
+      "DESCRIPTION": "ATK Media is a marketing consultancy specialized in GROWTH MARKETING."
+    },
+    "INTRO": "ATK Media is a marketing consultancy specialized in GROWTH MARKETING.",
+    "COPY1": "The redeeming Christ represents the members who are from Rio de Janeiro.",
+    "COPY2": "The Eiffel tower represents the french designer in the team."
+  },
   "PRIVACY": {
     "TITLE": "privacy policy",
     "COLLECTION_PERSONAL_INFORMATION": {

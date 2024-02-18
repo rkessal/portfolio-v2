@@ -3,7 +3,7 @@ import GoBack from "@/components/Work/GoBack/GoBack";
 import { Variants, motion } from "framer-motion";
 import Footer from "@/components/Footer/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { UseTranslation, useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next";
 import ChangeLanguage from "@/components/shared/ChangeLanguage/ChangeLanguage";
 import Head from "next/head";
 
@@ -81,7 +81,7 @@ export default function Oms({}: Props) {
       </Head>
       <div className="flex flex-col">
         <section className="flex-col relative p-8 bg-black h-[40vh] md:h-[80vh] flex ">
-          <nav className="flex flex-row justify-between items-center overflow-hidden z-40">
+          <nav className="z-40 flex flex-row items-center justify-between overflow-hidden">
             <GoBack
               variants={slideFromBottom}
               initial="initial"
@@ -100,7 +100,7 @@ export default function Oms({}: Props) {
             variants={imageContainer}
             initial="initial"
             animate="animate"
-            className="z-10 overflow-hidden absolute top-0 left-0 w-full h-full"
+            className="absolute top-0 left-0 z-10 w-full h-full overflow-hidden"
           >
             <motion.div
               variants={image}
@@ -111,14 +111,14 @@ export default function Oms({}: Props) {
               <Image
                 src="/projects/oms/images/oms.png"
                 alt="oms"
-                className="w-full h-full object-cover object-center"
+                className="object-cover object-center w-full h-full"
                 width={1440}
                 height={758}
               />
             </motion.div>
           </motion.div>
-          <div className="flex flex-col lg:gap-10 mt-auto">
-            <div className="title w-full z-10 overflow-hidden">
+          <div className="flex flex-col mt-auto lg:gap-10">
+            <div className="z-10 w-full overflow-hidden title">
               <motion.h1
                 variants={slideFromBottom}
                 initial="initial"
@@ -127,7 +127,7 @@ export default function Oms({}: Props) {
                 OMS
               </motion.h1>
             </div>
-            <div className="p-sans z-10 overflow-hidden">
+            <div className="z-10 overflow-hidden p-sans">
               <motion.p
                 variants={slideFromBottom}
                 initial="initial"
@@ -144,7 +144,7 @@ export default function Oms({}: Props) {
             </div>
           </div>
         </section>
-        <section className="flex flex-col px-8 pt-9 pb-32 gap-24">
+        <section className="flex flex-col gap-24 px-8 pb-32 pt-9">
           <div className="flex flex-col w-full gap-8 md:flex-row md:gap-40 ">
             <div className="flex flex-row p-sans ">
               <div className="w-32">
@@ -180,8 +180,8 @@ export default function Oms({}: Props) {
               </ul>
             </div>
           </div>
-          <p className="project-header max-w-3xl">{t("OMS.INTRO")}</p>
-          <div className="bg-white flex justify-center items-center">
+          <p className="max-w-3xl project-header">{t("OMS.INTRO")}</p>
+          <div className="flex items-center justify-center bg-white">
             <div className="w-full">
               <Image
                 src="/projects/oms/images/oms-1.png"
@@ -191,13 +191,13 @@ export default function Oms({}: Props) {
               />
             </div>
           </div>
-          <p className="p-lowercase w-full max-w-xl md:self-end">
+          <p className="w-full max-w-xl p-lowercase md:self-end">
             {t("OMS.COPY1")}
             <br />
             <br />
             {t("OMS.COPY2")}
           </p>
-          <div className="bg-white flex justify-center items-center">
+          <div className="flex items-center justify-center bg-white">
             <div className="w-full">
               <Image
                 loading="eager"
@@ -210,7 +210,7 @@ export default function Oms({}: Props) {
               />
             </div>
           </div>
-          <p className="p-lowercase w-full max-w-xl md:self-end">
+          <p className="w-full max-w-xl p-lowercase md:self-end">
             {t("OMS.COPY3")}
             <br />
             <br />
