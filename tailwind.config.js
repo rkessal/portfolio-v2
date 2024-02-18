@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         gloock: ["Gloock"],
       },
+      dropShadow: {
+        '2xl': '0px 0px 35px #a3a3a3'
+      }
     },
 
     colors: {
