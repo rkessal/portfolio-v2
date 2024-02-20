@@ -74,6 +74,12 @@
     "COPY1": "The redeeming Christ represents the members who are from Rio de Janeiro.",
     "COPY2": "The Eiffel tower represents the french designer in the team."
   },
+  "RESPIRASALUD": {
+    "META": {
+      "DESCRIPTION": "Katherin is a professional therapist with 15 years of experience."
+    },
+    "INTRO": "Katherin is a professional therapist with 15 years of experience. She is also a yoga instructor and has taught for more than 500 hours at the Sri Sri School of Yoga in Bangalore."
+  },
   "PRIVACY": {
     "TITLE": "privacy policy",
     "COLLECTION_PERSONAL_INFORMATION": {

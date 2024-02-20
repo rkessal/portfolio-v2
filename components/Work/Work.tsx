@@ -20,12 +20,12 @@ const projects: Project[] = [
   },
   {
     id: 1,
-    name: "ATK Media",
-    category: "Branding",
-    image: "atk.png",
-    show: true,
-    stack: "Vanilla JS",
-    link: "/atk",
+    name: "Cross Novia",
+    category: "Web Development",
+    image: "crossnovia.jpg",
+    show: false,
+    stack: "Next JS",
+    link: "/#",
   },
   {
     id: 2,
@@ -37,14 +37,32 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    name: "Nessnotes",
-    category: "Mobile App ",
-    image: "ness-notes.png",
+    name: "Pachamama",
+    category: "Web Development",
+    image: "pachamama.jpg",
     show: false,
-    stack: "React Native",
+    stack: "Next JS",
+  },
+  {
+    id: 4,
+    name: "Respira Salud",
+    category: "Web Design",
+    image: "respira-salud.jpeg",
+    show: true,
+    stack: "Figma",
+    link: "/respirasalud",
+  },
+  {
+    id: 5,
+    name: "ATK Media",
+    category: "Branding",
+    image: "atk.png",
+    show: true,
+    stack: "Vanilla JS",
+    link: "/atk",
   },
 ];
-export default function Work({}: Props) {
+export default function Work({ }: Props) {
   const { t } = useTranslation();
   return (
     <motion.section id="work" className="text-black uppercase bg-white ">

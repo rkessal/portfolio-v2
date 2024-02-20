@@ -19,6 +19,8 @@ export type Project = {
 };
 
 export default function Featured({ projects }: Props) {
+  const reversed = [...projects].reverse()
+
   const isLast = (array: any[], item: any) => {
     return array.indexOf(item) === array.length - 1;
   };
@@ -33,13 +35,13 @@ export default function Featured({ projects }: Props) {
 
   return (
     <>
-      {projects.map((project) => (
+      {reversed.map((project) => (
         <Project
           key={project.id}
           project={project}
           setModal={setModal}
           canMove={setCanMove}
-          isLast={isLast(projects, project)}
+          isLast={isLast(reversed, project)}
         />
       ))}
       {!isMobile && (
