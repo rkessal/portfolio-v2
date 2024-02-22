@@ -49,7 +49,7 @@ const slideFromBottom: Variants = {
     },
   },
 };
-export default function respiraSalud({ }: Props) {
+export default function RespiraSalud({ }: Props) {
   const { t } = useTranslation();
   return (
     <>
