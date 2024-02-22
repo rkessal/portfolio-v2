@@ -38,10 +38,11 @@ const projects: Project[] = [
   {
     id: 3,
     name: "Pachamama",
-    category: "Web Development",
+    category: "Web Design",
     image: "pachamama.jpg",
-    show: false,
-    stack: "Next JS",
+    show: true,
+    stack: "Figma",
+    link: "/pachamama"
   },
   {
     id: 4,
