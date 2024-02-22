@@ -50,7 +50,7 @@ const projects: Project[] = [
     category: "Web Design",
     image: "respira-salud.jpeg",
     show: true,
-    stack: "Figma",
+    stack: "Next JS",
     link: "/respirasalud",
   },
   {
