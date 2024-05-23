@@ -12,16 +12,16 @@ export default function Footer({}: Props) {
     window.localStorage.setItem("scroll", String(window.scrollY));
   };
   return (
-    <footer className="px-8 pt-24 md:pt-36 mt-0 2xl:-mt-36 pb-8 bg-black text-white">
+    <footer className="px-8 pt-24 pb-8 mt-0 text-white bg-black md:pt-36 2xl:-mt-36">
       <section className="flex flex-col gap-24 md:gap-32">
         <a
           href="mailto:hello@errka.dev"
-          className="hidden md:block h1-serif self-center hover:opacity-80"
+          className="self-center hidden italic md:block h1-serif hover:opacity-80"
         >
           hello@errka.dev
         </a>
         <div className="flex flex-col lg:flex-row">
-          <ul className="uppercase h1-sans flex-1">
+          <ul className="flex-1 uppercase h1-sans">
             <li>
               <a
                 className="hover:opacity-80"
@@ -48,14 +48,14 @@ export default function Footer({}: Props) {
             </Link>
             <li>
               <a
-                className="hover:opacity-80 cursor-pointer"
+                className="cursor-pointer hover:opacity-80"
                 onClick={() => scrollToTop()}
               >
                 {t("FOOTER.TOP")}
               </a>
             </li>
           </ul>
-          <div className="mt-10 lg:mt-0 lg:self-end uppercase">
+          <div className="mt-10 uppercase lg:mt-0 lg:self-end">
             © {t("FOOTER.RIGHTS")}
           </div>
         </div>
