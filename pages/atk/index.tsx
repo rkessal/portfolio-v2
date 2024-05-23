@@ -312,17 +312,6 @@ export default function Atk({ }: Props) {
           <div className="flex items-center justify-center bg-white">
             <div className="w-full">
               <Image
-                src="/projects/atk/images/atk-5.png"
-                width={1600}
-                height={1600}
-                className="px-12 pt-12 drop-shadow-2xl"
-                alt="demo 5"
-              />
-            </div>
-          </div>
-          <div className="flex items-center justify-center bg-white">
-            <div className="w-full">
-              <Image
                 src="/projects/atk/images/atk-6.png"
                 width={5000}
                 height={3750}
