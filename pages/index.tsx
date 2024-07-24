@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useTranslation } from "next-i18next";
+import GoogleAnalytics from "@/components/shared/GoogleAnalytics/GoogleAnalytics";
 
 const background: Variants = {
   initial: {
@@ -55,6 +56,7 @@ export default function Home() {
           content="https://errka.dev/errka-logo.png"
         />
       </Head>
+      <GoogleAnalytics />
       <Header />
       <Hero />
       <About />
