@@ -6,6 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import ChangeLanguage from "@/components/shared/ChangeLanguage/ChangeLanguage";
 import Head from "next/head";
+import GoogleAnalytics from "@/components/shared/GoogleAnalytics/GoogleAnalytics";
 
 type Props = {};
 
@@ -79,6 +80,7 @@ export default function Atk({ }: Props) {
           content="https://errka.dev/projects/atk/images/atk.png"
         />
       </Head>
+      <GoogleAnalytics />
       <div className="flex flex-col">
         <section className="flex-col relative p-8 bg-black h-[40vh] md:h-[80vh] flex ">
           <nav className="z-40 flex flex-row items-center justify-between overflow-hidden">

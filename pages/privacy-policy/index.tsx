@@ -5,6 +5,7 @@ import { useTranslation } from "next-i18next";
 import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import GoogleAnalytics from "@/components/shared/GoogleAnalytics/GoogleAnalytics";
 
 type Props = {};
 
@@ -15,13 +16,14 @@ export default function PrivacyPolicy({}: Props) {
       <Head>
         <title>Privacy Policy</title>
       </Head>
+      <GoogleAnalytics />
       <div className="p-8">
-        <nav className="flex flex-row justify-between items-center overflow-hidden z-40">
+        <nav className="z-40 flex flex-row items-center justify-between overflow-hidden">
           <GoBack />
           <ChangeLanguage />
         </nav>
-        <section className="flex flex-col py-80 gap-10 max-w-3xl">
-          <h1 className="h1-sans uppercase">{t("PRIVACY.TITLE")}</h1>
+        <section className="flex flex-col max-w-3xl gap-10 py-80">
+          <h1 className="uppercase h1-sans">{t("PRIVACY.TITLE")}</h1>
           <article>
             <h2 className="h2-sans">
               {t("PRIVACY.COLLECTION_PERSONAL_INFORMATION.TITLE")}
